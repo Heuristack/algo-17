@@ -44,7 +44,7 @@ void bfs(Graph & g, string u)
     if (g.find(u) == g.end()) return;
     else cout << "bfs: ";
 
-    enum class status {discovered, is_discovering, has_discovered};
+    enum class status {discovered, expending, processed};
     struct state {
         status status;
         string parent;
@@ -58,7 +58,7 @@ void bfs(Graph & g, string u)
     while (!q.empty()) {
         string v = q.front();
         q.pop();
-        states[v].status = status::is_discovering;
+        states[v].status = status::expending;
         for (auto const & w : g[v]) {
 
             if (states.find(w) == states.end()) {
@@ -68,7 +68,40 @@ void bfs(Graph & g, string u)
 
         }
         cout << "[" << v << "<-" << states[v].parent << ":" << states[v].distance << "]";
-        states[v].status = status::has_discovered;
+        states[v].status = status::processed;
+    }
+}
+
+void ucs(Graph & g, string u)
+{
+    if (g.find(u) == g.end()) return;
+    else cout << "ucs: ";
+
+    enum class status {discovered, expending, processed};
+    struct state {
+        status status;
+        string parent;
+        unsigned distance = 0;
+    };
+    map<string, state> states;
+    states[u] = {status::discovered, "0", 0};
+
+    priority_queue<string> q;
+    q.push(u);
+    while (!q.empty()) {
+        string v = q.top();
+        q.pop();
+        states[v].status = status::expending;
+        for (auto const & w : g[v]) {
+
+            if (states.find(w) == states.end()) {
+                states[w] = {status::discovered, v, states[v].distance+1};
+                q.push(w);
+            }
+
+        }
+        cout << "[" << v << "<-" << states[v].parent << ":" << states[v].distance << "]";
+        states[v].status = status::processed;
     }
 }
 
@@ -77,7 +110,7 @@ void dfs(Graph & g, string u)
     if (g.find(u) == g.end()) return;
     else cout << "dfs: ";
 
-    enum class status {discovered, is_discovering, has_discovered};
+    enum class status {discovered, expending, processed};
     struct state {
         status status;
         string parent;
@@ -91,7 +124,7 @@ void dfs(Graph & g, string u)
     while (!s.empty()) {
         string v = s.top();
         s.pop();
-        states[v].status = status::is_discovering;
+        states[v].status = status::expending;
         for (auto const & w : g[v]) {
             if (states.find(w) == states.end()) {
                 states[w] = {status::discovered, v, states[v].distance+1};
@@ -100,13 +133,15 @@ void dfs(Graph & g, string u)
 
         }
         cout << "[" << v << "<-" << states[v].parent << ":" << states[v].distance << "]";
-        states[v].status = status::has_discovered;
+        states[v].status = status::processed;
     }
 }
 
 void DFS(Graph & g, string v)
 {
-    enum class status {discovered, is_discovering, has_discovered};
+    if (g.find(v) == g.end()) return;
+
+    enum class status {discovered, expending, processed};
     struct state {
         status status;
         string parent;
@@ -122,7 +157,7 @@ void DFS(Graph & g, string v)
         cout << "DFS: ";
     }
 
-    states[v].status = status::is_discovering;
+    states[v].status = status::expending;
     states[v].enter = time++; cout << "(";
     for (auto const & w : g[v]) {
         if (states.find(w) == states.end()) {
@@ -132,7 +167,7 @@ void DFS(Graph & g, string v)
     }
     cout << "[" << v << "<-" << states[v].parent << ":" << states[v].distance << "]";
     states[v].leave = time++; cout << ")";
-    states[v].status = status::has_discovered;
+    states[v].status = status::processed;
 }
 
 int main()
@@ -150,9 +185,10 @@ int main()
     cout << g;
     bfs(g, "1");
     cout << endl;
+    ucs(g, "1");
+    cout << endl;
     dfs(g, "1");
     cout << endl;
     DFS(g, "1");
     cout << endl;
 }
-
