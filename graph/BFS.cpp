@@ -19,7 +19,7 @@ void bfs(Graph & g, Vertex u)
         unsigned distance = 0;
     };
     map<Vertex, state> states;
-    states[u] = {status::discovered, Vertex{}, 0};
+    states[u] = {status::discovered, {}, {}};
 
     queue<Vertex> q;
     q.push(u);
@@ -41,7 +41,7 @@ void bfs(Graph & g, Vertex u)
 int main()
 {
     auto const & E = TADM2_Figure_5_9_Figure_5_10;
-    Graph<int> g(E);
+    Graph g(E);
     bfs(g, 1);
     cout << endl;
 }

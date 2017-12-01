@@ -20,7 +20,7 @@ void ucs(Graph & g, Vertex u)
         unsigned distance = 0;
     };
     map<Vertex, state> states;
-    states[u] = {status::discovered, {}, 0};
+    states[u] = {status::discovered, {}, {}};
 
     priority_queue<Vertex> q;
     q.push(u);

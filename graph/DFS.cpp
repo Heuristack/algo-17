@@ -20,7 +20,7 @@ void dfs(Graph & g, Vertex u)
         unsigned distance = 0;
     };
     map<Vertex, state> states;
-    states[u] = {status::discovered, {}, 0};
+    states[u] = {status::discovered, {}, {}};
 
     stack<Vertex> s;
     s.push(u);
@@ -57,7 +57,7 @@ void DFS(Graph & g, Vertex v)
     static unsigned time = 0;
 
     if (states.find(v) == states.end()) {
-        states[v] = {status::discovered, {}, 0};
+        states[v] = {status::discovered, {}, {}};
         cout << "DFS: ";
     }
 
