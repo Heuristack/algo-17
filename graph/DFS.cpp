@@ -74,13 +74,16 @@ void DFS(Graph & g, Vertex v)
     states[v].status = status::processed;
 }
 
+template <typename V, typename E> using HashedRetrievableAdjacencyList = unordered_map<V, unordered_set<E>>;
 int main()
 {
     auto const & E = TADM2_Figure_5_9_Figure_5_10;
     Graph g(E);
     dfs(g, 1);
     cout << endl;
-    DFS(g, 1);
+
+    Graph<int, int, HashedRetrievableAdjacencyList> G(E);
+    DFS(G, 1);
     cout << endl;
 }
 

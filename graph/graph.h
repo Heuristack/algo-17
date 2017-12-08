@@ -11,12 +11,13 @@
 
 using namespace std;
 
-template <typename Vertex, typename Edge = Vertex> using BasicGraph = map<Vertex, set<Edge>>;
-template <typename Vertex> struct Graph : BasicGraph<Vertex>
+template <typename Vertex, typename Edge> struct OrderedRetrievableAdjanceyList : map<Vertex, set<Edge>> {};
+template <typename Vertex, typename Edge, template <typename, typename> typename BasicGraph = OrderedRetrievableAdjanceyList>
+struct Graph : BasicGraph<Vertex, Edge>
 {
-    Graph(vector<pair<Vertex, Vertex>> const & E)
+    Graph(vector<pair<Vertex, Vertex>> const & edges)
     {
-        for (auto const & e : E) {
+        for (auto const & e : edges) {
             this->operator[](e.first).emplace(e.second);
             this->operator[](e.second).emplace(e.first);
         }
@@ -34,8 +35,8 @@ template <typename Vertex> struct Graph : BasicGraph<Vertex>
         return s;
     }
 };
-template <typename Vertex> explicit Graph(vector<pair<Vertex,Vertex>> const & E) -> Graph<Vertex>;
-template <typename Vertex> ostream & operator<<(ostream & s, Graph<Vertex> & g)
+template <typename Vertex, typename Edge = Vertex> explicit Graph(vector<pair<Vertex, Vertex>> const & edges) -> Graph<Vertex, Edge>;
+template <typename Vertex, typename Edge> ostream & operator<<(ostream & s, Graph<Vertex, Edge> & g)
 {
     return g.puts(s);
 }
