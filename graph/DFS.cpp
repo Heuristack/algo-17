@@ -82,7 +82,7 @@ int main()
     dfs(g, 1);
     cout << endl;
 
-    Graph<int, int, HashedRetrievableAdjacencyList> G(E);
+    Graph<int, int, int, HashedRetrievableAdjacencyList> G(E);
     DFS(G, 1);
     cout << endl;
 }
