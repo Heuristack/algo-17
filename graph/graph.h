@@ -35,14 +35,14 @@ struct Graph : BasicGraph<Vertex, Edge>
     Graph(vector<pair<pair<Vertex, Vertex>, Weight>> const & edges, bool directed = false): option {directed, true}
     {
         for (auto const & e : edges) {
-            this->operator[](e.first.first).emplace(make_pair(e.first.second, e.second));
+            this->operator[](e.first.first).emplace(Edge{e.first.second, e.second});
             if (!option.directed) {
-                this->operator[](e.first.second).emplace(make_pair(e.first.first, e.second));
+                this->operator[](e.first.second).emplace(Edge{e.first.first, e.second});
             }
         }
     }
 
-    ostream & puts(ostream & s)
+    ostream & print(ostream & s)
     {
         for (auto const & v : *this) {
             s << v.first << ": ";
@@ -54,14 +54,31 @@ struct Graph : BasicGraph<Vertex, Edge>
         return s;
     }
 
+    ostream & print_weighted(ostream & s)
+    {
+        for (auto const & v : *this) {
+            s << v.first << ": ";
+            for (auto const & w : v.second) {
+                s << "[" << w.first << ": " << w.second << "] ";
+            }
+            s << "\n";
+        }
+        return s;
+    }
+
     GraphOption option;
 };
 
 template <typename Vertex, typename Weight = double> explicit Graph(vector<pair<pair<Vertex, Vertex>, Weight>> const & edges) -> Graph<Vertex, Weight>;
-template <typename Vertex> explicit Graph(vector<pair<Vertex, Vertex>> const & edges) -> Graph<Vertex, nullopt_t, Vertex>;
-template <typename Vertex, typename Edge> ostream & operator<<(ostream & s, Graph<Vertex, Edge> & g)
+template <typename Vertex, typename Weight> ostream & operator<<(ostream & s, Graph<Vertex, Weight> & g)
 {
-    return g.puts(s);
+    return g.print_weighted(s);
+}
+
+template <typename Vertex> explicit Graph(vector<pair<Vertex, Vertex>> const & edges) -> Graph<Vertex, nullopt_t, Vertex>;
+template <typename Vertex> ostream & operator<<(ostream & s, Graph<Vertex, nullopt_t, Vertex> & g)
+{
+    return g.print(s);
 }
 
 #endif

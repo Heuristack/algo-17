@@ -20,7 +20,7 @@ namespace TADM2
 
 namespace CLRS3
 {
-    vector<pair<pair<string, string>, int>> Figure_23_1 = {
+    vector<pair<pair<string, string>, int>> const Figure_23_1 = {
         {{"a", "b"}, 4},
         {{"a", "h"}, 8},
         {{"b", "h"},11},
@@ -37,7 +37,7 @@ namespace CLRS3
         {{"e", "f"},10}
     };
 
-    vector<pair<pair<string, string>, int>> Figure_24_2 = {
+    vector<pair<pair<string, string>, int>> const Figure_24_2 = {
         {{"s", "t"}, 3},
         {{"s", "y"}, 5},
         {{"z", "s"}, 3},
@@ -50,7 +50,7 @@ namespace CLRS3
         {{"z", "x"}, 7}
     };
 
-    vector<pair<pair<string, string>, int>> Figure_24_4 = {
+    vector<pair<pair<string, string>, int>> const Figure_24_4 = {
         {{"s", "t"}, 6},
         {{"s", "y"}, 7},
         {{"z", "s"}, 2},
@@ -63,7 +63,7 @@ namespace CLRS3
         {{"z", "x"}, 7}
     };
 
-    vector<pair<pair<string, string>, int>> Figure_24_6 = {
+    vector<pair<pair<string, string>, int>> const Figure_24_6 = {
         {{"s", "t"},10},
         {{"s", "y"}, 5},
         {{"z", "s"}, 7},
