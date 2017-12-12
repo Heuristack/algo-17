@@ -10,9 +10,11 @@ namespace TADM2
 {
     vector<pair<int,int>> const Figure_5_9 = {
         {1,6},
-        {1,2},{1,5},
+        {1,2},
+        {1,5},
         {2,5},
-        {2,3},{5,4},
+        {2,3},
+        {5,4},
         {3,4}
     };
     auto const & Figure_5_10 = Figure_5_9;
