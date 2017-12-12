@@ -77,7 +77,7 @@ void DFS(Graph & g, Vertex v)
 template <typename V, typename E> using HashedRetrievableAdjacencyList = unordered_map<V, unordered_set<E>>;
 int main()
 {
-    auto const & E = TADM2_Figure_5_9_Figure_5_10;
+    auto const & E = TADM2::Figure_5_9;
     Graph g(E);
     dfs(g, 1);
     cout << endl;

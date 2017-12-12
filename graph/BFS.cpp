@@ -42,7 +42,7 @@ void bfs(Graph & g, Vertex u)
 
 int main()
 {
-    auto const & E = TADM2_Figure_5_9_Figure_5_10;
+    auto const & E = TADM2::Figure_5_9;
     Graph g(E);
     bfs(g, 1);
     cout << endl;
