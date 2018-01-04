@@ -4,6 +4,8 @@
 #include <algorithm>
 using namespace std;
 
+//TODO: implement this in backtracking infrastructure and remove this
+
 void generate_all_permutations(vector<int> const & elements)
 {
     static vector<int> permutation;
