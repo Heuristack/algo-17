@@ -1,6 +1,6 @@
 Sorting
 =======
-
+***
 Sorting is Searching
 --------------------
 Sorting is to find a particular permutation among all permutations of a given sequence of elements, in this perspective, sorting problem could be solved by **searching** - the universal problem-solving mechanism in AI. Permutation or arrangement of elements in a collection hides an important information, i.e., the concept of position, either relative or absolute, each permutation is actually a set of **`pair <position, element>`**, so the problem can be transformed to finding out all those pairs, either brute-forcingly or systematically.
@@ -111,7 +111,7 @@ void quick_sort(ForwardIterator p, ForwardIterator r)
 
 Partially Sorted
 ----------------
-During the execution of these sorting algorithms, different styles of partial sorting state exist. For insertion and selection, the first-half is sorted and second-half is not. For merge sort, the divided subsequences are sorted by themselves before merge. For quick sort, the any element in the firs-half is lower than any element in the second-half. For heap sort, it's partially sorted satisfying the **heap-property**. While for bubble sort, it seems partially sorted randomly.
+During the execution of these sorting algorithms, different styles of partial sorting state exist. For insertion and selection, the **first-half is sorted but second-half is not**. For merge sort, the first-half and second-half are **sorted separately** before merge. For quick sort, **any element in the firs-half is lower than any element in the second-half**. For heap sort, the constructed heap satisfys the **heap-property**. While for bubble sort, it seems **partially sorted randomly**.
 
 `O(N)`
 ------
