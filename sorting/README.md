@@ -1,5 +1,3 @@
-Sorting
-=======
 ***
 Sorting is Searching
 --------------------
@@ -111,7 +109,7 @@ void quick_sort(ForwardIterator p, ForwardIterator r)
 
 Partially Sorted
 ----------------
-During the execution of these sorting algorithms, different styles of partial sorting state exist. For insertion and selection, the **first-half is sorted but second-half is not**. For merge sort, the first-half and second-half are **sorted separately** before merge. For quick sort, **any element in the firs-half is lower than any element in the second-half**. For heap sort, the constructed heap satisfys the **heap-property**. While for bubble sort, it seems **partially sorted randomly**.
+During the **execution** of these sorting algorithms, different styles of **partial sorting state** exist. For insertion and selection, the **first-half is sorted but second-half is not**. For merge sort, the first-half and second-half are **sorted separately** before merge. For quick sort, **any element in the firs-half is lower than any element in the second-half**. For heap sort, the constructed heap satisfys the **heap-property**. While for bubble sort, it seems **partially sorted randomly**.
 
 `O(N)`
 ------
