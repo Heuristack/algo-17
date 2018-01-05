@@ -31,7 +31,7 @@ High-Order Implementation
 
 **Insertion Sort** - **insert an arbitrary element** from the remaining unsorted sequence **into its equal range** of the increasing sorted sequence
 
-```
+```C++
 template <typename ForwardIterator>
 void insertion_sort(ForwardIterator p, ForwardIterator r)
 {
@@ -43,7 +43,7 @@ void insertion_sort(ForwardIterator p, ForwardIterator r)
 
 **Selection Sort** - **move minimum element** from the remaining unsorted sequence **to its final position** in sorted sequence one after another
 
-```
+```C++
 template <typename ForwardIterator>
 void selection_sort(ForwardIterator p, ForwardIterator r)
 {
@@ -55,7 +55,7 @@ void selection_sort(ForwardIterator p, ForwardIterator r)
 
 **Bubble Sort** - reduce **inversions** exhaustively
 
-```
+```C++
 template <typename BidirectionalIterator>
 void bubble_sort(BidirectionalIterator p, BidirectionalIterator r)
 {
@@ -71,7 +71,7 @@ void bubble_sort(BidirectionalIterator p, BidirectionalIterator r)
 
 **Heap Sort** - push heap forward to **make heap** then pop heap backward to **sort heap**
 
-```
+```C++
 template <typename RandomAccessIterator>
 void heap_sort(RandomAccessIterator p, RandomAccessIterator r)
 {
@@ -82,7 +82,7 @@ void heap_sort(RandomAccessIterator p, RandomAccessIterator r)
 
 **Merge Sort** - divide and conquer then **merge** to combine
 
-```
+```C++
 template <typename ForwardIterator>
 void merge_sort(ForwardIterator p, ForwardIterator r)
 {
@@ -96,7 +96,7 @@ void merge_sort(ForwardIterator p, ForwardIterator r)
 
 **Quick Sort** - **partition** then conquer and no need to combine
 
-```
+```C++
 template <typename ForwardIterator>
 void quick_sort(ForwardIterator p, ForwardIterator r)
 {
