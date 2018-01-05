@@ -17,7 +17,7 @@ free tree - rooted tree |
 **ordered tree - positional tree** |
 node: internal - external |
 root - leaf |
-ancestor - descedant | 
+ancestor - descendant | 
 parent - child - sibling |
 **depth - height** |
 
