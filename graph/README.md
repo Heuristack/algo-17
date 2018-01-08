@@ -104,41 +104,39 @@ The essence of searching is to **follow up one option now and put the others asi
 
 
 ### MST: Minimum Spanning Trees (Undirected, Weighted)
+* **cut**: a binary partition of the vertex set
+* **cross**: an edge connecting the 2 subsets of the binary partition of the cut
+* **respect**: a cut respects an edge set if no edge in the set cross the cut
+* **light**: the minimum weighted edge crosses the cut
 
-**Concepts**
+**Generic Minimum Spanning Tree:** Grow the MST one edge at a time.
 
-* Cut: A `cut = (S, V - S)` is a partition of `V`.
-* Cross: An edge `(u, v)` crosses the cut if one of `{u, v}` in `S` while the other in `V - S`.
-* Respect: A cut respects a set of edges `A`, if no edge in `A` crosses the cut.
-* Light Edge: an edge crosses the cut with minimum weight
+* maintain an edge set a subset of the minimum spanning tree
+* select an safe edge and add it into the set at each iteration
+* until the set forms a minimum spanning tree
 
-**Generic Minimum Spanning Tree Algorithm:** Grow the MST one edge a time
 
-* Manage a set of edges A and
-* Maintain the loop Invariant: prior to each iteration, A is a subset of some minimum spanning tree
-* Determine an edge (u, v) that can be added to A without violating the invariant, at each iteration
-* Until A forms a minimum spanning tree
+**Prim's Algorithm:**
 
-#### Kruskal's Algorithm
+**Kruskal's Algorithm:**
 
-#### Prim's Algorithm
 
 
 ### SSSP: Single Source Shortest Paths (Directed, Weighted)
-**Relaxation:** relax shortest-path estimate according to the triangle-inequality (reduce the estimated path weight)
+**relaxation:** relax shortest-path estimate according to the triangle-inequality (reduce the estimated path weight)
 
 **Properties**
 
 * Optimal Substructure: subpaths of a shortest paths are shortest paths
-* Triangle Inequallity: For edge `(u, v)` with weight `w(u, v)`, shortest path `p(s, v) <= p(s, u) + w(u, v)`
+* Triangle Inequallity: For edge `(u,v)` with weight `w(u,v)`, shortest path `p(s,v) <= p(s,u) + w(u,v)`
 * Upper-Bound:
-* No-Path: If `p(s, t)` is infinity, there is no shortest path from `s` to `t`
+* No-Path: If `p(s,t)` is infinity, there is no shortest path from `s` to `t`
 * Convergence:
 * Path-Relaxation:
 * Predecessor-Subgraph:
 
 **Bellman-Ford Algorithm:** 
 
-**Dijkstra's Algorithm:** Greedily choose the edge which yields a shortest path at present using priority queue as frontier;
+**Dijkstra's Algorithm:** Greedily choose the edge which yields a shortest path at present using priority queue as frontier.
 
 ***
