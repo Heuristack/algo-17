@@ -20,13 +20,13 @@ Data Structure: Abstract Data Types
 * **Distributed:** `hash(key)->address`, e.g., hash table, directed address table, etc.
 * **Ordered (partial or complete):**  `compare(key1, key2) -> bool`, e.g.,  heap (binary, Fibonacci), search tree (binary, balanced), etc.
 * **Timed (operations):** queuing theory, e.g., queue (First-In-First-Out), stack (Last-In-First-Out), etc.
-* **Relational (direction & degree):** **`1-1` `1-N` `N-1` `N-N`** **`less``<`** **`equal``==`**
+* **Relational (direction & degree):** **`1-1` `1-N` `N-1` `N-N`** **`less`** **`<`** **`equal`** **`==`**
 
 **Operations (semantics):**
 
-* **existence (set):** `insert``delete` `push``pop`
-* **address (memory):** `at(address) -> content` `next``prev` `front``back`
+* **existence (set):** `insert` `delete` `push` `pop`
+* **address (memory):** `at(address) -> content` `next` `prev` `front` `back`
 * **search (key):** `find(key)->address` 
-* **order statistics:** `min_element``max_element``minmax_element``nth_element`
+* **order statistics:** `min_element` `max_element` `minmax_element` `nth_element`
 
 ***
