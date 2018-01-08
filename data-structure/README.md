@@ -22,6 +22,7 @@ Data Structure: Abstract Data Types
 * **Timed (operations):** queuing theory, e.g., queue (First-In-First-Out), stack (Last-In-First-Out), etc.
 * **Relational (direction & degree):** **`1-1` `1-N` `N-1` `N-N`** **`less`** **`<`** **`equal`** **`==`**
 
+
 **Operations (semantics):**
 
 * **existence (set):** `insert` `delete` `push` `pop`
