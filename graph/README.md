@@ -35,85 +35,60 @@ Data Structures
 ---------------
 Proper graph modeling (how to implement the graph data structure) is the key to making efficient use of graph algorithms, take the adjacency list for example, each item in which could be a vertex or an edge totegher with some auxiliary information like weight, direction, etc. Whether only out-edges or both out-edges and in-edges are stored for further retrieval depends on operations required by algorithms.
 
-#### Graph Representations
-* Adjacency Matrix
-* **Adjacency List**
-* **Edge List**
+**Graph Representations:** 
+**`adjacency_matrix` `adjacency_list` `edge_list`**
 
-#### Graph Dimensions
-* **Directed vs Undirected**
-* **Weighted vs Unweighted**
-* Cyclic vs Acyclic
-* Dense vs Sparse
-* Simple vs Non-simple
-* Explicit vs Implicit
-* Labeled vs Unlabeled
-* Embedded vs Topological
+**Graph Dimensions:** 
+**`directed-undirected` `weighted-unweighted` `cyclic-acyclic`**
 
 
 Algorithms
 ----------
 
-### Search: BFS - DFS
-The essence of searching is to **follow up one option now and put the others aside for later** in an **open list** representing the searching **frontier**. While algorithms that **forget their history are doomed to repeat it**, to avoid which, visited vertexes or edges are kept in a **closed list** representing the **explored set** that differentiates **graph search** from **tree search**.
+### Search: `BFS` `DFS`
+**The essence of searching** 
+is to **follow up one option now and put the others aside for later** in an **open list** representing the searching **frontier**. While algorithms that **forget their history are doomed to repeat it**, to avoid which, visited vertexes or edges are kept in a **closed list** representing the **explored set** that differentiates **graph search** from **tree search**.
 
-#### Frontier Data Structures
-* Stack
-* Queue
-* Priority Queue
+**Frontier data structures:**
+**`stack` `queue` `priority_queue`**
 
-#### Edge Classification
-* Tree Edge
-* Forward Edge
-* Back Edge
-* Cross Edge
+**Edge classification:**
+**`tree edge` `forward edge` `back edge` `cross edge`**
 
-#### BFS: Breadth-First Search and Properties
+#### BFS: Breadth-First Search
 * Frontier: Queue
 * Predecessor Subgraph: BFS Tree
-* Visit Order: Read = Read from left to right line by line.
+* Visit Order: **Read:** Read from left to right line by line.
 * Edge Classification: Tree, Cross Edge (Undirected); Tree, Back, Cross Edge (Directed)
 * Shortest-Path (Unweighted):
 
-#### DFS: Depth-First Search and Properties
+#### DFS: Depth-First Search
 * Frontier: Stack
 * Predecessor Subgraph: DFS Tree
-* Visit Order: Walk (Around: before or after) = Go along to the deepest and come back along the same way. PreOrder, PostOrder and Reverse PostOrder.
+* Visit Order: **Walk (Around: before or after):** Go along to the deepest and come back along the same way. **`PRE_ORDER` `POST_ORDER`**
 * Edge Classification: Tree, Back Edge (Undirected);
 * Parenthesis Structure (Directed or Undirected):
 * White-Path (Directed or Undirected):
 
-#### Event Visitors
-* Initialize Vertices (optional)
-* Start Vertex (optional)
-* Discover Vertex
-* Examine Edge
-* Tree Edge
-* Back Edge
-* Forward or Cross Edge
-* Cycle Edge
-* Finish Vertex
-* Edge Relaxed
-* Edge Minimized
-
 #### Applications
-* Reachability: Path Finding
-* Connectivity: CC (Connected Component) and SCC (Strongly Connected Component)
-* Cyclicity: Acyclic = No back edge in DFS Tree
-* Topological Sort: DAG = Topological Order Exists. DFS Reverse PostOrder = Topological Order.
+* **Reachability**: **`PathFind`**
+* **Connectivity**: **`ConnectedComponent` `StronglyConnectedComponent`**
+* **Cyclicity**: Acyclic = No back edge in DFS Tree
+* **Topological Sort**: DAG = Topological Order Exists. DFS Reverse PostOrder = Topological Order.
 
 
 ### MST: Minimum Spanning Trees (Undirected, Weighted)
-* **cut**: a binary partition of the vertex set
-* **cross**: an edge connecting the 2 subsets of the binary partition of the cut
-* **respect**: a cut respects an edge set if no edge in the set cross the cut
-* **light**: the minimum weighted edge crosses the cut
+**cut** - a binary partition of the vertex set.
+**cross** - an edge connecting the 2 subsets of the binary partition of the cut.
+**respect** - a cut respects an edge set if no edge in the set cross the cut.
+**light** - the minimum weighted edge crosses the cut.
 
-**Generic Minimum Spanning Tree:** Grow the MST one edge at a time.
+**Generic MST:** 
+Choose the minimum safe edge **greedily** then add it to edge subset of the minimum spanning tree one-by-one.
 
-* maintain an edge set a subset of the minimum spanning tree
+* maintain an edge set as a subset of the minimum spanning tree
 * select an safe edge and add it into the set at each iteration
-* until the set forms a minimum spanning tree
+* until all vertices are contained by the edge set
 
 
 **Prim's Algorithm:**
@@ -123,7 +98,7 @@ The essence of searching is to **follow up one option now and put the others asi
 
 
 ### SSSP: Single Source Shortest Paths (Directed, Weighted)
-**relaxation:** relax shortest-path estimate according to the triangle-inequality (reduce the estimated path weight)
+**relaxation:** relax shortest-path estimate according to the triangle-inequality (reduce the estimated path weight).
 
 **Properties**
 
@@ -138,5 +113,17 @@ The essence of searching is to **follow up one option now and put the others asi
 **Bellman-Ford Algorithm:** 
 
 **Dijkstra's Algorithm:** Greedily choose the edge which yields a shortest path at present using priority queue as frontier.
+
+
+### Events
+* **Discover Vertex**
+* **Examine Edge**
+* **Tree Edge**
+* **Forward Edge**
+* **Cross Edge**
+* **Back Edge**
+* **Cycle Edge**
+* **Finish Vertex**
+* **Edge Relaxed**
 
 ***
