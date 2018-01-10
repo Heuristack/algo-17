@@ -49,10 +49,10 @@ Algorithms
 **The essence of searching** 
 is to **follow up one option now and put the others aside for later** in an **open list** representing the searching **frontier**. While algorithms that **forget their history are doomed to repeat it**, to avoid which, visited vertexes or edges are kept in a **closed list** representing the **explored set** that differentiates **graph search** from **tree search**.
 
-**Frontier data structures:**
+**Frontier Data Structures:**
 **`stack` `queue` `priority_queue`**
 
-**Edge classification:**
+**Edge Classification:**
 **`tree edge` `forward edge` `back edge` `cross edge`**
 
 #### BFS: Breadth-First Search
@@ -116,14 +116,9 @@ Choose the minimum safe edge **greedily** then add it to edge subset of the mini
 
 
 ### Events
-* **Discover Vertex**
-* **Examine Edge**
-* **Tree Edge**
-* **Forward Edge**
-* **Cross Edge**
-* **Back Edge**
-* **Cycle Edge**
-* **Finish Vertex**
-* **Edge Relaxed**
+* **Vertex Exploration:** `discover_vertex` `finish_vertex`
+* **Edge Exploration:** `examine_edge` `cycle_edge`
+* **Edge Classification:** `tree_edge` `forward_edge` `cross_edge` `back_edge` 
+* **Edge Relaxation:** `edge_relaxed` `edge_minimized`
 
 ***
