@@ -55,14 +55,14 @@ is to **follow up one option now and put the others aside for later** in an **op
 **Edge Classification:**
 **`tree edge` `forward edge` `back edge` `cross edge`**
 
-#### BFS: Breadth-First Search
+#### Breadth-First Search `BFS`
 * Frontier: Queue
 * Predecessor Subgraph: BFS Tree
 * Visit Order: **Read:** Read from left to right line by line.
 * Edge Classification: Tree, Cross Edge (Undirected); Tree, Back, Cross Edge (Directed)
 * Shortest-Path (Unweighted):
 
-#### DFS: Depth-First Search
+#### Depth-First Search `DFS`
 * Frontier: Stack
 * Predecessor Subgraph: DFS Tree
 * Visit Order: **Walk (Around: before or after):** Go along to the deepest and come back along the same way. **`PRE_ORDER` `POST_ORDER`**
@@ -77,7 +77,10 @@ is to **follow up one option now and put the others aside for later** in an **op
 * **Topological Sort**: DAG = Topological Order Exists. DFS Reverse PostOrder = Topological Order.
 
 
-### MST: Minimum Spanning Trees (Undirected, Weighted)
+### Minimum Spanning Trees `MST`
+**`Undirected`**
+**`Weighted`**
+
 **cut** - a binary partition of the vertex set.
 **cross** - an edge connecting the 2 subsets of the binary partition of the cut.
 **respect** - a cut respects an edge set if no edge in the set cross the cut.
@@ -97,7 +100,9 @@ Choose the minimum safe edge **greedily** then add it to edge subset of the mini
 
 
 
-### SSSP: Single Source Shortest Paths (Directed, Weighted)
+### Single Source Shortest Paths `SSSP`
+**`Directed`** **`Weighted`**
+
 **relaxation:** relax shortest-path estimate according to the triangle-inequality (reduce the estimated path weight).
 
 **Properties**
@@ -112,13 +117,13 @@ Choose the minimum safe edge **greedily** then add it to edge subset of the mini
 
 **Bellman-Ford Algorithm:** 
 
-**Dijkstra's Algorithm:** Greedily choose the edge which yields a shortest path at present using priority queue as frontier.
+**Dijkstra's Algorithm:** Greedily choose the edge which yields a shortest path using priority queue as frontier.
 
 
 ### Events
-* **Vertex Exploration:** `discover_vertex` `finish_vertex`
-* **Edge Exploration:** `examine_edge` `cycle_edge`
-* **Edge Classification:** `tree_edge` `forward_edge` `cross_edge` `back_edge` 
-* **Edge Relaxation:** `edge_relaxed` `edge_minimized`
+* **Vertex Exploration:** **`discover_vertex` `finish_vertex`**
+* **Edge Exploration:** **`examine_edge` `cycle_edge`**
+* **Edge Classification:** **`tree_edge` `forward_edge` `cross_edge` `back_edge`**
+* **Edge Relaxation:** **`edge_relaxed` `edge_minimized`**
 
 ***
