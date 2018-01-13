@@ -1,7 +1,7 @@
 ***
 
 Concepts
---------
+========
 **Graph: vertex - edge** |
 symmetry: **undirected - directed** |
 edge: in - out |
@@ -32,7 +32,7 @@ Let `G = (V, E)` be an **undirected graph**, the following statements are equiva
 
 
 Data Structures
----------------
+===============
 Proper graph modeling (how to implement the graph data structure) is the key to making efficient use of graph algorithms, take the adjacency list for example, each item in which could be a vertex or an edge totegher with some auxiliary information like weight, direction, etc. Whether only out-edges or both out-edges and in-edges are stored for further retrieval depends on operations required by algorithms.
 
 **Graph Representations:** 
@@ -43,7 +43,8 @@ Proper graph modeling (how to implement the graph data structure) is the key to 
 
 
 Algorithms
-----------
+==========
+**`BDPKBD`**
 
 ### Search: `BFS` `DFS`
 **The essence of searching** 
@@ -70,7 +71,7 @@ is to **follow up one option now and put the others aside for later** in an **op
 * Parenthesis Structure (Directed or Undirected):
 * White-Path (Directed or Undirected):
 
-#### Applications
+#### Searching Applications
 * **Reachability**: **`PathFind`**
 * **Connectivity**: **`ConnectedComponent` `StronglyConnectedComponent`**
 * **Cyclicity**: Acyclic = No back edge in DFS Tree

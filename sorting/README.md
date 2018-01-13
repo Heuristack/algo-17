@@ -27,6 +27,8 @@ High-Order Implementation
 -------------------------
 `STL` algorithms can also be used to express relative **high-order semantics** used by different sorting strategies, e.g., `partition` and `partition_point` can be used in quick sort for dividing the unsorted collection of elements in place, while `merge` or `inplace_merge` can be used in merge sort for combining sorted subsequences, heap algorithms like `make_heap` and `sort_heap` can be used in heap sort, and `rotate` can be used in insertion sort, etc. This will result in nice and neat implementations so called **declarative programming**.
 
+**`ISBHMQ`**
+
 **Insertion Sort** - **insert an arbitrary element** from the remaining unsorted sequence **into its equal range** of the increasing sorted sequence
 
 ```C++
