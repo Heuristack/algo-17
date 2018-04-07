@@ -35,7 +35,7 @@ void bubble_sort(BidirectionalIterator p, BidirectionalIterator r)
 template <typename RandomAccessIterator>
 void heap_sort(RandomAccessIterator p, RandomAccessIterator r)
 {
-    for (auto i = p; i != r; i++) push_heap(p,i);
+    for (auto i = p; i != r; i++) push_heap(p,next(i));
     for (auto i = r; i != p; i--)  pop_heap(p,i);
 }
 
